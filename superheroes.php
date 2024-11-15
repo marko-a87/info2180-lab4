@@ -1,4 +1,12 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Accept");
+
+if (isset($_GET['query'])) {
+
+    $hero_name =htmlspecialchars( $_GET['query'] , ENT_QUOTES);
+    }
 
 $superheroes = [
   [
@@ -62,14 +70,39 @@ $superheroes = [
       "biography" => "Notably powerful, Wanda Maximoff has fought both against and with the Avengers, attempting to hone her abilities and do what she believes is right to help the world.",
   ], 
 ];
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type, Authorization');
+?>
+
+<?php 
+
+if(empty($hero_name)){
+    ?>
+    <ul>
+    <?php foreach ($superheroes as $superhero): ?>
+    <li><?=$superhero['alias']; ?></li>
+    <?php endforeach; ?>
+    </ul>
+    <?php
+ }
+ else if($hero_name){
+    $found_match = false;
+    foreach($superheroes as $superhero):
+        if($hero_name === $superhero['name'] || $hero_name ===$superhero['alias']){
+            
+            ?>
+            <h3><?= strtoupper($superhero['alias']);?></h3>
+            <h4><?= strtoupper("A.K.A " . $superhero['name']);?></h4>
+            <p><?= $superhero['biography'];?></p>
+            <?php
+            $found_match = true;
+            break;
+        }
+    endforeach;
+
+    if(!$found_match){
+        ?> <h6> <?="SUPERHERO NOT FOUND"; ?> </h6>
+        <?php
+    }
+}
 
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>

@@ -1,0 +1,108 @@
+html {
+  background-color: #efefeb;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.button {
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 6px;
+  vertical-align: middle;
+  margin-left: -4px;
+}
+
+input[type="text"] {
+  padding: 12px 10px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  margin-right: 0;
+  display: inline-block;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  background: rgb(25, 115, 167);
+  padding: 30px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+h3 {
+  font-size: 16pt;
+  margin-top: 35px;
+}
+h4 {
+  margin-top: 20px;
+  font-size: 13pt;
+}
+h5 {
+  margin-top: 5;
+  font-size: 20pt;
+  margin: 2;
+}
+
+h6 {
+  color: red;
+  font-size: 11pt;
+}
+
+#biography {
+  font-style: Time;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.search_name {
+  display: flex;
+  align-items: start;
+  width: 80%;
+  height: 25px;
+}
+
+#result {
+  display: flex;
+  width: 79%;
+  height: 850px;
+  flex-direction: column;
+  align-items: start;
+
+  /* justify-content: center; */
+}
+
+.result_header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border-bottom: 1px solid black;
+  height: 60px;
+  width: 100%;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  margin-bottom: 45px;
+}
+
+.superheroes li {
+  margin-left: 50px;
+}
